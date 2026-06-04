@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="border-t border-border bg-background py-8">
       <div className="mx-auto flex max-w-[900px] flex-col items-center gap-6 px-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
         <p className="text-sm text-text-tertiary md:order-1">
-          Estefania · Product Manager
+          Estefania Tortoledo · Senior Product Manager
         </p>
         <p className="text-xs text-text-tertiary md:order-2">
           Built with Next.js and Cursor

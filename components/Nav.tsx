@@ -18,7 +18,7 @@ export default function Nav() {
           href="/"
           className="shrink-0 text-sm font-medium tracking-wide text-text-primary"
         >
-          Estefania
+          Estefania Tortoledo
         </Link>
         <div className="flex items-center gap-4 sm:gap-6">
           <ul className="flex items-center gap-4 sm:gap-6">
