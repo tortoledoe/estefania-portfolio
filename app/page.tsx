@@ -22,6 +22,7 @@ interface AiSystemCard {
   description: string;
   tags: string[];
   comingSoon?: boolean;
+  href?: string;
 }
 
 const heroStats = [
@@ -83,6 +84,7 @@ const aiSystems: AiSystemCard[] = [
     description:
       "An AI-assisted workflow system for strategic job searching — featuring modular agents, evaluation loops, ATS intelligence, recruiter simulation, and human-in-the-loop review.",
     tags: ["Claude", "Modular Agents", "Evaluation Loops"],
+    href: "/ai-systems/job-search-os",
   },
   {
     title: "SMB Cash Flow Intelligence System",
@@ -171,15 +173,25 @@ function AiSystemCard({ card }: { card: AiSystemCard }) {
       <p className="mt-4 text-sm leading-relaxed text-text-secondary">
         {card.description}
       </p>
-      <ul className="mt-6 flex flex-wrap gap-2">
-        {card.tags.map((tag) => (
-          <li key={tag}>
-            <span className="inline-block rounded-full border border-border px-3 py-1 text-xs text-text-secondary">
-              {tag}
-            </span>
-          </li>
-        ))}
-      </ul>
+      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <ul className="flex flex-wrap gap-2">
+          {card.tags.map((tag) => (
+            <li key={tag}>
+              <span className="inline-block rounded-full border border-border px-3 py-1 text-xs text-text-secondary">
+                {tag}
+              </span>
+            </li>
+          ))}
+        </ul>
+        {card.href && (
+          <Link
+            href={card.href}
+            className="shrink-0 text-sm font-medium text-text-primary transition-colors hover:text-text-secondary"
+          >
+            View Project →
+          </Link>
+        )}
+      </div>
     </article>
   );
 }
