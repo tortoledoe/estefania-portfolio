@@ -20,26 +20,18 @@ export default function Nav() {
         >
           Estefania Tortoledo
         </Link>
-        <div className="flex items-center gap-4 sm:gap-6">
-          <ul className="flex items-center gap-4 sm:gap-6">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="text-xs text-text-secondary transition-colors hover:text-text-primary sm:text-sm"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <a
-            href="/resume.pdf"
-            className="shrink-0 rounded-full bg-accent px-4 py-1.5 text-xs font-medium text-text-primary transition-colors hover:bg-accent-dark sm:text-sm"
-          >
-            Resume
-          </a>
-        </div>
+        <ul className="flex items-center gap-4 sm:gap-6">
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="text-xs text-text-secondary transition-colors hover:text-text-primary sm:text-sm"
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
     </header>
   );

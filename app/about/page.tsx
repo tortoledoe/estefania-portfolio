@@ -90,7 +90,7 @@ export default function AboutPage() {
   return (
     <main>
       {/* Header */}
-      <section className="bg-background px-6 pt-32 pb-16">
+      <section className="bg-background px-6 pt-24 pb-16">
         <div className="mx-auto max-w-[900px]">
           <p className="text-xs uppercase tracking-widest text-text-tertiary">
             Senior Product Manager · Los Angeles, CA
@@ -245,7 +245,7 @@ export default function AboutPage() {
                 key={p.title}
                 className="rounded-2xl border-[0.5px] border-border bg-surface p-6"
               >
-                <p className="text-sm font-medium text-text-primary">
+                <p className="text-sm font-medium leading-snug text-text-primary">
                   {p.title}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-text-secondary">
