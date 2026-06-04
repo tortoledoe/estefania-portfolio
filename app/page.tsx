@@ -162,7 +162,7 @@ function AiSystemCard({ card }: { card: AiSystemCard }) {
           Coming Soon
         </span>
       )}
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:pr-24">
+      <div className="flex flex-col gap-3 pr-28 sm:flex-row sm:items-start sm:justify-between sm:pr-24">
         <h3 className="text-xl font-medium text-text-primary">{card.title}</h3>
         <span className="w-fit shrink-0 rounded-full border border-border bg-background px-3 py-1 text-xs text-text-secondary">
           {card.tag}
@@ -188,7 +188,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="flex min-h-screen flex-col justify-center bg-background px-6 pt-20 pb-16">
+      <section className="flex min-h-screen flex-col justify-center bg-background px-6 pt-20 pb-8">
         <div className="mx-auto w-full max-w-[900px]">
           <p className="text-xs uppercase tracking-widest text-text-tertiary">
             Fintech Product Manager
