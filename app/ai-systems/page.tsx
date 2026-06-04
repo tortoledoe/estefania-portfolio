@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-3 text-xs uppercase tracking-widest text-text-tertiary">
+    <p className="mb-2 text-xs uppercase tracking-widest text-text-tertiary">
       {children}
     </p>
   );
@@ -19,7 +19,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-2xl font-medium text-text-primary sm:text-3xl">
+    <h2 className="text-2xl font-medium text-text-primary">
       {children}
     </h2>
   );
@@ -27,7 +27,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 function Prose({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-6 max-w-[720px] space-y-4 text-base leading-relaxed text-text-secondary">
+    <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-text-secondary">
       {children}
     </div>
   );
@@ -49,7 +49,7 @@ function AgentCard({
   output: string;
 }) {
   return (
-    <div className="rounded-2xl border-[0.5px] border-border bg-surface overflow-hidden">
+    <div className="rounded-lg border border-border bg-surface overflow-hidden">
       {/* Header */}
       <div className="px-6 pt-5 pb-4">
         <div className="flex items-baseline gap-2">
@@ -95,7 +95,7 @@ function ArchFlow({
     <div className="mt-8 flex flex-col gap-0">
       {stages.map((s, i) => (
         <div key={i}>
-          <div className="flex gap-5 rounded-2xl border-[0.5px] border-border bg-surface p-5">
+          <div className="flex gap-5 rounded-lg border border-border bg-surface p-5">
             <span className="mt-0.5 shrink-0 text-xs font-medium tabular-nums text-text-tertiary">
               {s.stage}
             </span>
@@ -129,7 +129,7 @@ function ToolGrid({
       {tools.map((t) => (
         <div
           key={t.name}
-          className="rounded-2xl border-[0.5px] border-border bg-surface p-5"
+          className="rounded-lg border border-border bg-surface p-5"
         >
           <p className="text-sm font-medium text-text-primary">{t.name}</p>
           <p className="mt-2 text-xs leading-relaxed text-text-secondary">
@@ -359,8 +359,8 @@ export default function AiSystemsPage() {
   return (
     <main>
       {/* Back link */}
-      <div className="bg-background px-6 pt-28 pb-0">
-        <div className="mx-auto max-w-[900px]">
+      <div className="bg-background px-6 pt-24 pb-0 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <Link
             href="/#ai-systems"
             className="text-sm text-text-secondary transition-colors hover:text-text-primary"
@@ -371,15 +371,15 @@ export default function AiSystemsPage() {
       </div>
 
       {/* Header */}
-      <section className="bg-background px-6 pt-10 pb-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 pt-10 pb-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <p className="text-xs uppercase tracking-widest text-text-tertiary">
             AI Systems · Workflow Orchestration · Active Build
           </p>
           <h1 className="mt-4 max-w-[720px] text-[32px] font-medium leading-[1.15] tracking-tight text-text-primary sm:text-[44px]">
             AI Job Search OS: A Modular Agent System for Strategic Job Searching
           </h1>
-          <p className="mt-5 max-w-[600px] text-base leading-relaxed text-text-secondary sm:text-lg">
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-text-secondary">
             An AI-native workflow system that treats job searching as a product
             problem — with modular agents, evaluation loops, human-in-the-loop
             review, and continuous optimization built in from the start.
@@ -419,8 +419,8 @@ export default function AiSystemsPage() {
       <div className="border-t border-border" />
 
       {/* Section 1 — The Problem */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Problem</SectionLabel>
           <SectionHeading>
             Job Searching Is a Product Problem. Most People Treat It Like a
@@ -457,8 +457,8 @@ export default function AiSystemsPage() {
       </section>
 
       {/* Section 2 — System Overview */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>System Overview</SectionLabel>
           <SectionHeading>
             A Modular Agent Architecture for End-to-End Job Search Optimization
@@ -493,7 +493,7 @@ export default function AiSystemsPage() {
             ].map((principle) => (
               <div
                 key={principle.title}
-                className="flex gap-4 rounded-2xl border-[0.5px] border-border bg-background p-5"
+                className="flex gap-4 rounded-lg border border-border bg-background p-5"
               >
                 <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                 <div>
@@ -511,8 +511,8 @@ export default function AiSystemsPage() {
       </section>
 
       {/* Section 3 — The Agents */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Agent Architecture</SectionLabel>
           <SectionHeading>
             Five Specialized Agents, One Unified System
@@ -532,8 +532,8 @@ export default function AiSystemsPage() {
       </section>
 
       {/* Section 4 — System Architecture */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>System Design</SectionLabel>
           <SectionHeading>How the System Works End to End</SectionHeading>
           <Prose>
@@ -547,9 +547,9 @@ export default function AiSystemsPage() {
       </section>
 
       {/* Section 5 — Human-in-the-Loop (surface bg) */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
-          <div className="rounded-2xl border-[0.5px] border-border bg-background p-8">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
+          <div className="rounded-lg border border-border bg-background p-8">
             <SectionLabel>Human-in-the-Loop</SectionLabel>
             <SectionHeading>
               Why Every Output Goes Through Human Review Before Action
@@ -593,8 +593,8 @@ export default function AiSystemsPage() {
 
       {/* Section 6 — PM Perspective (surface bg) */}
       <section className="bg-surface px-6 pb-16">
-        <div className="mx-auto max-w-[900px]">
-          <div className="rounded-2xl border-[0.5px] border-border bg-background p-8">
+        <div className="mx-auto max-w-[760px]">
+          <div className="rounded-lg border border-border bg-background p-8">
             <SectionLabel>PM Perspective</SectionLabel>
             <SectionHeading>
               What Building This System Taught Me About AI Product Design
@@ -615,7 +615,7 @@ export default function AiSystemsPage() {
               {pmLessons.map((lesson, i) => (
                 <div
                   key={i}
-                  className="flex gap-4 rounded-2xl border-[0.5px] border-border bg-surface p-5"
+                  className="flex gap-4 rounded-lg border border-border bg-surface p-5"
                 >
                   <span className="mt-0.5 shrink-0 text-xs font-medium tabular-nums text-text-tertiary">
                     0{i + 1}
@@ -636,8 +636,8 @@ export default function AiSystemsPage() {
       </section>
 
       {/* Section 7 — Current Status */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Current Status</SectionLabel>
           <SectionHeading>
             Where the System Is Today and Where It&apos;s Going
@@ -666,7 +666,7 @@ export default function AiSystemsPage() {
               {roadmapItems.map((item) => (
                 <div
                   key={item.title}
-                  className="flex gap-4 rounded-2xl border-[0.5px] border-border bg-surface p-5"
+                  className="flex gap-4 rounded-lg border border-border bg-surface p-5"
                 >
                   <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-border" />
                   <div>
@@ -685,8 +685,8 @@ export default function AiSystemsPage() {
       </section>
 
       {/* Section 8 — Tools */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Built With</SectionLabel>
           <SectionHeading>Tools and Infrastructure</SectionHeading>
           <ToolGrid tools={tools} />
@@ -694,8 +694,8 @@ export default function AiSystemsPage() {
       </section>
 
       {/* Section 9 — Connection to Fintech */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Connection to Fintech</SectionLabel>
           <SectionHeading>Why a Fintech PM Built This System</SectionHeading>
           <Prose>
@@ -736,8 +736,8 @@ export default function AiSystemsPage() {
       </section>
 
       {/* Bottom navigation */}
-      <div className="border-t border-border bg-background px-6 py-12">
-        <div className="mx-auto flex max-w-[900px] flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+      <div className="border-t border-border bg-background px-6 py-12 sm:px-10">
+        <div className="mx-auto flex max-w-[760px] flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <Link
             href="/#ai-systems"
             className="text-sm text-text-secondary transition-colors hover:text-text-primary"

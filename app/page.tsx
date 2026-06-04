@@ -98,7 +98,7 @@ const aiSystems: AiSystemCard[] = [
 
 function WorkCaseStudyCard({ study }: { study: WorkCaseStudy }) {
   return (
-    <article className="rounded-2xl border-[0.5px] border-border bg-surface p-8">
+    <article className="rounded-lg border border-border bg-card-bg p-8">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <p className="text-xs uppercase tracking-widest text-text-tertiary">
           {study.company}
@@ -108,34 +108,36 @@ function WorkCaseStudyCard({ study }: { study: WorkCaseStudy }) {
         </span>
       </div>
 
-      <h3 className="mt-3 text-xl font-medium text-text-primary">
+      <h3 className="mt-3 text-xl font-medium leading-snug text-text-primary">
         {study.title}
       </h3>
-      <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+      <p className="mt-2 mb-5 text-sm leading-relaxed text-text-secondary">
         {study.description}
       </p>
 
-      <div className="mt-6 flex flex-wrap gap-6 sm:gap-8">
+      <div className="flex flex-wrap gap-8">
         {study.metrics.map((metric) => (
-          <div key={metric.value} className="min-w-[100px]">
-            <p className="text-sm font-medium text-text-primary">
+          <div key={metric.value}>
+            <p className="text-base font-medium text-text-primary">
               {metric.value}
             </p>
             {metric.label ? (
-              <p className="mt-0.5 text-xs text-text-tertiary">{metric.label}</p>
+              <p className="mt-1 text-xs uppercase tracking-wide text-text-tertiary">
+                {metric.label}
+              </p>
             ) : null}
           </div>
         ))}
       </div>
 
       {study.disclaimer && (
-        <p className="mt-4 text-xs italic text-text-tertiary">
+        <p className="mt-1 mb-5 text-xs italic text-text-tertiary">
           * Metrics shown are illustrative estimates. Specific figures are
           confidential.
         </p>
       )}
 
-      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-2 flex flex-col gap-4 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
         <ul className="flex flex-wrap gap-2">
           {study.tags.map((tag) => (
             <li key={tag}>
@@ -158,22 +160,27 @@ function WorkCaseStudyCard({ study }: { study: WorkCaseStudy }) {
 
 function AiSystemCard({ card }: { card: AiSystemCard }) {
   return (
-    <article className="relative rounded-2xl border-[0.5px] border-border bg-surface p-8">
+    <article className="relative rounded-lg border border-border bg-card-bg p-8">
       {card.comingSoon && (
-        <span className="absolute top-6 right-6 rounded-full bg-accent px-3 py-1 text-xs font-medium text-text-primary">
+        <span className="absolute top-6 right-6 rounded-full border border-border bg-background px-3 py-1 text-xs text-text-tertiary">
           Coming Soon
         </span>
       )}
-      <div className="flex flex-col gap-3 pr-28 sm:flex-row sm:items-start sm:justify-between sm:pr-24">
+      {!card.comingSoon && card.href && (
+        <span className="absolute top-6 right-6 rounded-full bg-accent px-3 py-1 text-xs font-medium text-text-primary">
+          Active
+        </span>
+      )}
+      <div className="flex flex-col gap-3 pr-28 sm:pr-24">
         <h3 className="text-xl font-medium text-text-primary">{card.title}</h3>
-        <span className="w-fit shrink-0 rounded-full border border-border bg-background px-3 py-1 text-xs text-text-secondary">
+        <span className="w-fit rounded-full border border-border bg-background px-3 py-1 text-xs text-text-secondary">
           {card.tag}
         </span>
       </div>
       <p className="mt-4 text-sm leading-relaxed text-text-secondary">
         {card.description}
       </p>
-      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-6 flex flex-col gap-4 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
         <ul className="flex flex-wrap gap-2">
           {card.tags.map((tag) => (
             <li key={tag}>
@@ -200,44 +207,47 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="flex min-h-screen flex-col justify-center bg-background px-6 pt-20 pb-8">
-        <div className="mx-auto w-full max-w-[900px]">
-          <p className="text-xs uppercase tracking-widest text-text-tertiary">
+      <section className="flex min-h-screen flex-col justify-center bg-background px-6 pt-20 pb-24 sm:px-10">
+        <div className="mx-auto w-full max-w-[860px]">
+          <p className="mb-5 text-xs uppercase tracking-widest text-text-tertiary">
             Fintech Product Manager
           </p>
-          <h1 className="mt-4 max-w-[900px] text-[36px] leading-[1.1] font-medium tracking-tight text-text-primary sm:text-[56px]">
-            I build financial products at the intersection of data, risk, and
-            experience.
+          <h1 className="mb-5 text-4xl font-medium tracking-tightest text-text-primary sm:text-5xl">
+            I build financial products at the intersection of{" "}
+            <span className="underline decoration-accent decoration-[3px] underline-offset-8">
+              data, risk,
+            </span>{" "}
+            and experience.
           </h1>
-          <p className="mt-6 max-w-[560px] text-base leading-relaxed text-text-secondary sm:text-lg">
+          <p className="mb-10 max-w-xl text-lg leading-relaxed text-text-secondary">
             6 years in fintech across consumer and SMB lending. Now focused on
             AI-assisted financial products, decision systems, and the
             infrastructure that makes intelligent fintech possible.
           </p>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href="/#selected-work"
-              className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-medium text-text-primary transition-colors hover:bg-accent-dark"
+              className="inline-flex items-center justify-center rounded bg-text-primary px-6 py-3 text-sm font-medium text-background transition-colors hover:opacity-90"
             >
               View My Work
             </Link>
             <Link
               href="/about"
-              className="inline-flex items-center justify-center rounded-full border border-border px-6 py-3 text-sm text-text-secondary transition-colors hover:border-text-tertiary hover:text-text-primary"
+              className="inline-flex items-center justify-center rounded border border-border px-6 py-3 text-sm text-text-secondary transition-colors hover:border-text-secondary"
             >
               About Me
             </Link>
           </div>
 
-          <div className="mt-16 flex flex-col gap-6 sm:flex-row sm:items-center sm:divide-x sm:divide-border">
+          <div className="mt-10 flex flex-col gap-6 border-t border-border pt-10 sm:flex-row sm:gap-12">
             {heroStats.map((stat) => (
-              <div key={stat.label} className="sm:px-8 first:sm:pl-0">
-                <p className="text-sm font-medium text-text-primary">
+              <div key={stat.label}>
+                <p className="text-2xl font-medium text-text-primary">
                   {stat.value}
                 </p>
                 {stat.label ? (
-                  <p className="mt-0.5 text-xs text-text-tertiary">
+                  <p className="mt-1 text-xs uppercase tracking-wide text-text-tertiary">
                     {stat.label}
                   </p>
                 ) : null}
@@ -250,16 +260,16 @@ export default function HomePage() {
       {/* Selected Work */}
       <section
         id="selected-work"
-        className="scroll-mt-20 bg-background px-6 py-24"
+        className="scroll-mt-20 bg-background px-6 py-24 sm:px-10"
       >
-        <div className="mx-auto w-full max-w-[900px]">
-          <p className="mb-3 text-xs uppercase tracking-widest text-text-tertiary">
+        <div className="mx-auto w-full max-w-5xl">
+          <p className="mb-2 text-xs uppercase tracking-widest text-text-tertiary">
             Selected Work
           </p>
-          <h2 className="mb-2 text-2xl font-medium text-text-primary">
+          <h2 className="mb-2 text-3xl font-medium text-text-primary">
             Case Studies
           </h2>
-          <p className="mb-12 max-w-[720px] text-text-secondary">
+          <p className="mb-10 max-w-xl text-base leading-relaxed text-text-secondary">
             Fintech products built across consumer and SMB lending — from 0→1
             platforms to funnel optimization and regulated product launches.
           </p>
@@ -273,15 +283,15 @@ export default function HomePage() {
       </section>
 
       {/* AI Systems */}
-      <section id="ai-systems" className="scroll-mt-20 bg-surface px-6 py-24">
-        <div className="mx-auto w-full max-w-[900px]">
-          <p className="mb-3 text-xs uppercase tracking-widest text-text-tertiary">
+      <section id="ai-systems" className="scroll-mt-20 bg-surface px-6 py-24 sm:px-10">
+        <div className="mx-auto w-full max-w-5xl">
+          <p className="mb-2 text-xs uppercase tracking-widest text-text-tertiary">
             AI Systems
           </p>
-          <h2 className="mb-2 text-2xl font-medium text-text-primary">
+          <h2 className="mb-2 text-3xl font-medium text-text-primary">
             AI-Assisted Product Work
           </h2>
-          <p className="mb-12 max-w-[720px] text-text-secondary">
+          <p className="mb-10 max-w-xl text-base leading-relaxed text-text-secondary">
             Building AI-native workflows, decision systems, and operational
             tools — with Claude, Cursor, and modern AI infrastructure.
           </p>
@@ -295,17 +305,17 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-background px-6 py-20">
-        <div className="mx-auto max-w-[900px] text-center">
-          <h2 className="text-3xl font-medium text-text-primary">
+      <section className="bg-background px-6 py-20 sm:px-10">
+        <div className="mx-auto max-w-5xl text-center">
+          <h2 className="mb-3 text-4xl font-medium text-text-primary">
             Let&apos;s talk fintech and AI.
           </h2>
-          <p className="mt-4 text-text-secondary">
+          <p className="mb-8 text-base text-text-secondary">
             Open to PM roles at fintech and AI-first companies.
           </p>
           <a
-            href="mailto:hello@estefania.dev"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3 text-sm font-medium text-text-primary transition-colors hover:bg-accent-dark"
+            href="mailto:tortoledoestefan@gmail.com"
+            className="inline-flex items-center justify-center rounded bg-text-primary px-8 py-3 text-sm font-medium text-background transition-colors hover:opacity-90"
           >
             Get in touch
           </a>

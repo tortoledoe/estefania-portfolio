@@ -9,23 +9,23 @@ const navItems: NavItem[] = [
 
 export default function Nav() {
   return (
-    <header className="fixed top-0 right-0 left-0 z-50 border-b border-border bg-background">
+    <header className="fixed top-0 right-0 left-0 z-50 border-b border-border bg-nav-bg">
       <nav
         aria-label="Main navigation"
-        className="mx-auto flex max-w-[900px] items-center justify-between gap-4 px-6 py-4"
+        className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5 sm:px-10"
       >
         <Link
           href="/"
-          className="shrink-0 text-sm font-medium tracking-wide text-text-primary"
+          className="shrink-0 text-sm font-medium tracking-tight text-text-primary"
         >
           Estefania Tortoledo
         </Link>
-        <ul className="flex items-center gap-4 sm:gap-6">
+        <ul className="flex items-center gap-6">
           {navItems.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="text-xs text-text-secondary transition-colors hover:text-text-primary sm:text-sm"
+                className="text-sm text-text-tertiary transition-colors hover:text-text-secondary"
               >
                 {item.label}
               </Link>

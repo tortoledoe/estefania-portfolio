@@ -14,7 +14,7 @@ const metricsDisclaimer =
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-3 text-xs uppercase tracking-widest text-text-tertiary">
+    <p className="mb-2 text-xs uppercase tracking-widest text-text-tertiary">
       {children}
     </p>
   );
@@ -22,7 +22,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-2xl font-medium text-text-primary sm:text-3xl">
+    <h2 className="text-2xl font-medium text-text-primary">
       {children}
     </h2>
   );
@@ -30,7 +30,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 function Prose({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-6 max-w-[720px] space-y-4 text-base leading-relaxed text-text-secondary">
+    <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-text-secondary">
       {children}
     </div>
   );
@@ -102,7 +102,7 @@ function TradeoffGrid({
       {cards.map((c) => (
         <div
           key={c.title}
-          className="rounded-2xl border-[0.5px] border-border bg-surface p-6"
+          className="rounded-lg border border-border bg-surface p-6"
         >
           <p className="text-xs font-medium uppercase tracking-widest text-text-tertiary">
             {c.title}
@@ -128,7 +128,7 @@ function MetricCards({
       {cards.map((c) => (
         <div
           key={c.title}
-          className="rounded-2xl border-[0.5px] border-border bg-surface p-6"
+          className="rounded-lg border border-border bg-surface p-6"
         >
           <p className="text-xs uppercase tracking-widest text-text-tertiary">
             {c.title}
@@ -242,8 +242,8 @@ export default function QuantumPage() {
   return (
     <main>
       {/* Back link */}
-      <div className="bg-background px-6 pt-28 pb-0">
-        <div className="mx-auto max-w-[900px]">
+      <div className="bg-background px-6 pt-24 pb-0 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <Link
             href="/#selected-work"
             className="text-sm text-text-secondary transition-colors hover:text-text-primary"
@@ -254,16 +254,16 @@ export default function QuantumPage() {
       </div>
 
       {/* Header */}
-      <section className="bg-background px-6 pt-10 pb-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 pt-10 pb-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <p className="text-xs uppercase tracking-widest text-text-tertiary">
             Quantum Lending Solutions · SMB Lending · 0→1
           </p>
-          <h1 className="mt-4 max-w-[720px] text-[32px] font-medium leading-[1.15] tracking-tight text-text-primary sm:text-[44px]">
+          <h1 className="mt-4 max-w-[720px] text-4xl font-medium tracking-tightest text-text-primary">
             Building a Financial Platform from Zero: Connecting Acquisition,
             Data Infrastructure, and Self-Service
           </h1>
-          <p className="mt-5 max-w-[600px] text-base leading-relaxed text-text-secondary sm:text-lg">
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-text-secondary">
             How I led 0→1 product development of a complete SMB lending platform
             — from application experience through financial data infrastructure,
             offer design, and borrower self-service — prioritized under real
@@ -278,10 +278,10 @@ export default function QuantumPage() {
               { value: "↑40%", label: "Self-Service Adoption" },
             ].map((stat) => (
               <div key={stat.label} className="sm:px-8 first:sm:pl-0">
-                <p className="text-xl font-medium text-text-primary">
+                <p className="text-2xl font-medium text-text-primary">
                   {stat.value}
                 </p>
-                <p className="mt-0.5 text-xs text-text-tertiary">{stat.label}</p>
+                <p className="mt-1 text-xs uppercase tracking-wide text-text-tertiary">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -312,8 +312,8 @@ export default function QuantumPage() {
       <div className="border-t border-border" />
 
       {/* Section 1 — Context */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Context</SectionLabel>
           <SectionHeading>
             A Growing SMB Lending Business With No Product Foundation
@@ -346,8 +346,8 @@ export default function QuantumPage() {
       </section>
 
       {/* Section 2 — Problem */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Problem</SectionLabel>
           <SectionHeading>
             No Unified Product Across the Entire Loan Lifecycle
@@ -390,8 +390,8 @@ export default function QuantumPage() {
       </section>
 
       {/* Section 3 — Key Insight */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Key Insight</SectionLabel>
           <SectionHeading>
             Two Systemic Gaps Were Driving All the Inefficiency
@@ -433,8 +433,8 @@ export default function QuantumPage() {
       </section>
 
       {/* Section 4 — Strategy */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Strategy</SectionLabel>
           <SectionHeading>
             Build a Scalable Lending Platform, Not Just Features
@@ -480,7 +480,7 @@ export default function QuantumPage() {
             ].map((item) => (
               <div
                 key={item.rank}
-                className="flex gap-4 rounded-2xl border-[0.5px] border-border bg-background p-5"
+                className="flex gap-4 rounded-lg border border-border bg-background p-5"
               >
                 <span className="mt-0.5 shrink-0 text-xs font-medium tabular-nums text-text-tertiary">
                   {item.rank}
@@ -506,8 +506,8 @@ export default function QuantumPage() {
       </section>
 
       {/* Section 5 — Roadmap */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Roadmap</SectionLabel>
           <SectionHeading>
             Four Phases, Built in Order of Business Impact
@@ -524,8 +524,8 @@ export default function QuantumPage() {
       </section>
 
       {/* Section 6 — Financial Data Deep Dive (surface bg) */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Deep Dive</SectionLabel>
           <SectionHeading>
             The Financial Data Layer: Where Open Banking Meets Underwriting
@@ -573,7 +573,7 @@ export default function QuantumPage() {
           </Prose>
 
           {/* Signal callout */}
-          <div className="mt-8 rounded-2xl border-[0.5px] border-border bg-background p-6">
+          <div className="mt-8 rounded-lg border border-border bg-background p-6">
             <p className="text-xs font-medium uppercase tracking-widest text-text-tertiary">
               Key Cash Flow Signals
             </p>
@@ -600,8 +600,8 @@ export default function QuantumPage() {
       </section>
 
       {/* Section 7 — Key Tradeoffs */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Key Decisions</SectionLabel>
           <SectionHeading>Prioritization Under Real Constraints</SectionHeading>
           <Prose>
@@ -616,8 +616,8 @@ export default function QuantumPage() {
       </section>
 
       {/* Section 8 — Outcome */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Outcome</SectionLabel>
           <SectionHeading>
             Stronger Acquisition, Lower Cost-to-Serve, Better Borrower
@@ -634,7 +634,7 @@ export default function QuantumPage() {
           <MetricCards cards={metricCards} />
 
           {/* Business impact summary */}
-          <div className="mt-10 max-w-[720px] space-y-4 rounded-2xl border-[0.5px] border-border bg-background p-6">
+          <div className="mt-10 max-w-2xl space-y-4 rounded-lg border border-border bg-background p-6">
             <p className="text-sm font-medium text-text-primary">
               Business Impact
             </p>
@@ -661,8 +661,8 @@ export default function QuantumPage() {
       </section>
 
       {/* Section 9 — AI Lens */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>AI Lens</SectionLabel>
           <SectionHeading>
             How I Would Redesign This Platform With AI Today
@@ -713,8 +713,8 @@ export default function QuantumPage() {
       </section>
 
       {/* Section 10 — Cross-Fintech Application */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Beyond This Context</SectionLabel>
           <SectionHeading>
             Where This Thinking Applies Across Fintech
@@ -762,8 +762,8 @@ export default function QuantumPage() {
       </section>
 
       {/* Bottom navigation */}
-      <div className="border-t border-border bg-background px-6 py-12">
-        <div className="mx-auto flex max-w-[900px] flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+      <div className="border-t border-border bg-background px-6 py-12 sm:px-10">
+        <div className="mx-auto flex max-w-[760px] flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <Link
             href="/#selected-work"
             className="text-sm text-text-secondary transition-colors hover:text-text-primary"
@@ -780,7 +780,7 @@ export default function QuantumPage() {
             >
               BMG Money →
             </Link>
-            <p className="mt-0.5 text-xs text-text-tertiary">
+            <p className="mt-1 text-xs uppercase tracking-wide text-text-tertiary">
               Launching a Military Lending Act Product in a Regulated Fintech
               Environment
             </p>

@@ -14,7 +14,7 @@ const metricsDisclaimer =
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-3 text-xs uppercase tracking-widest text-text-tertiary">
+    <p className="mb-2 text-xs uppercase tracking-widest text-text-tertiary">
       {children}
     </p>
   );
@@ -22,7 +22,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-2xl font-medium text-text-primary sm:text-3xl">
+    <h2 className="text-2xl font-medium text-text-primary">
       {children}
     </h2>
   );
@@ -30,7 +30,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 function Prose({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-6 max-w-[720px] space-y-4 text-base leading-relaxed text-text-secondary">
+    <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-text-secondary">
       {children}
     </div>
   );
@@ -54,7 +54,7 @@ function ConstraintGrid({
       {cards.map((c) => (
         <div
           key={c.title}
-          className="rounded-2xl border-[0.5px] border-border bg-surface p-6"
+          className="rounded-lg border border-border bg-surface p-6"
         >
           <p className="text-xs font-medium uppercase tracking-widest text-text-tertiary">
             {c.title}
@@ -80,7 +80,7 @@ function PillarCards({
       {cards.map((c) => (
         <div
           key={c.pillar}
-          className="rounded-2xl border-[0.5px] border-border bg-surface p-6"
+          className="rounded-lg border border-border bg-surface p-6"
         >
           <p className="text-xs font-medium uppercase tracking-widest text-text-tertiary">
             {c.pillar}
@@ -107,7 +107,7 @@ function DecisionStack({
       {decisions.map((d) => (
         <div
           key={d.number}
-          className="flex gap-5 rounded-2xl border-[0.5px] border-border bg-surface p-6"
+          className="flex gap-5 rounded-lg border border-border bg-surface p-6"
         >
           <span className="mt-0.5 shrink-0 text-xs font-medium tabular-nums text-text-tertiary">
             {d.number}
@@ -136,7 +136,7 @@ function ImpactCards({
       {cards.map((c) => (
         <div
           key={c.title}
-          className="rounded-2xl border-[0.5px] border-border bg-surface p-6"
+          className="rounded-lg border border-border bg-surface p-6"
         >
           <p className="text-xs font-medium uppercase tracking-widest text-text-tertiary">
             {c.title}
@@ -246,8 +246,8 @@ export default function BmgPage() {
   return (
     <main>
       {/* Back link */}
-      <div className="bg-background px-6 pt-28 pb-0">
-        <div className="mx-auto max-w-[900px]">
+      <div className="bg-background px-6 pt-24 pb-0 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <Link
             href="/#selected-work"
             className="text-sm text-text-secondary transition-colors hover:text-text-primary"
@@ -258,16 +258,16 @@ export default function BmgPage() {
       </div>
 
       {/* Header */}
-      <section className="bg-background px-6 pt-10 pb-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 pt-10 pb-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <p className="text-xs uppercase tracking-widest text-text-tertiary">
             BMG Money · Consumer Lending · Regulated Product
           </p>
-          <h1 className="mt-4 max-w-[720px] text-[32px] font-medium leading-[1.15] tracking-tight text-text-primary sm:text-[44px]">
+          <h1 className="mt-4 max-w-[720px] text-4xl font-medium tracking-tightest text-text-primary">
             Designing a Regulated Financial Product from Scratch: Compliance
             Infrastructure at the Product Layer
           </h1>
-          <p className="mt-5 max-w-[600px] text-base leading-relaxed text-text-secondary sm:text-lg">
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-text-secondary">
             How I led product definition, borrower experience strategy, and
             execution planning for an MLA-compliant consumer lending product —
             coordinating across 9 cross-functional teams under significant
@@ -282,10 +282,10 @@ export default function BmgPage() {
               { value: "Full Lifecycle", label: "Designed" },
             ].map((stat) => (
               <div key={stat.label} className="sm:px-8 first:sm:pl-0">
-                <p className="text-xl font-medium text-text-primary">
+                <p className="text-2xl font-medium text-text-primary">
                   {stat.value}
                 </p>
-                <p className="mt-0.5 text-xs text-text-tertiary">{stat.label}</p>
+                <p className="mt-1 text-xs uppercase tracking-wide text-text-tertiary">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -316,8 +316,8 @@ export default function BmgPage() {
       <div className="border-t border-border" />
 
       {/* Section 1 — Context */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Context</SectionLabel>
           <SectionHeading>
             Expanding Into a New Borrower Segment With No Supporting
@@ -363,8 +363,8 @@ export default function BmgPage() {
 
       {/* Section 2 — Honest Context (accent callout) */}
       <section className="bg-background px-6 pb-16">
-        <div className="mx-auto max-w-[900px]">
-          <div className="rounded-2xl border-[0.5px] border-border bg-surface p-8 border-l-4 border-l-accent">
+        <div className="mx-auto max-w-[760px]">
+          <div className="rounded-lg border border-border bg-surface p-8 border-l-4 border-l-accent">
             <SectionLabel>Important Context</SectionLabel>
             <SectionHeading>
               This Product Did Not Launch — and Why That Matters
@@ -396,8 +396,8 @@ export default function BmgPage() {
       </section>
 
       {/* Section 3 — Problem */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Problem</SectionLabel>
           <SectionHeading>
             Four Constraint Domains, All Requiring Simultaneous Resolution
@@ -415,8 +415,8 @@ export default function BmgPage() {
       </section>
 
       {/* Section 4 — Key Insight */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Key Insight</SectionLabel>
           <SectionHeading>
             Compliance Embedded at the Product Layer Is Not a Constraint —
@@ -457,8 +457,8 @@ export default function BmgPage() {
       </section>
 
       {/* Section 5 — My Role */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>My Role</SectionLabel>
           <SectionHeading>
             Leading Product Across the Full Borrower Lifecycle
@@ -497,7 +497,7 @@ export default function BmgPage() {
             ].map((item) => (
               <div
                 key={item.layer}
-                className="flex gap-4 rounded-2xl border-[0.5px] border-border bg-background p-5"
+                className="flex gap-4 rounded-lg border border-border bg-background p-5"
               >
                 <span className="mt-0.5 w-24 shrink-0 text-xs font-medium text-text-secondary">
                   {item.layer}
@@ -512,8 +512,8 @@ export default function BmgPage() {
       </section>
 
       {/* Section 6 — Product Strategy */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Strategy</SectionLabel>
           <SectionHeading>
             Three Strategic Pillars, One Unified Approach
@@ -529,8 +529,8 @@ export default function BmgPage() {
       </section>
 
       {/* Section 7 — Key Decisions */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Key Decisions</SectionLabel>
           <SectionHeading>
             The Strategic Tradeoffs That Shaped the Product
@@ -546,8 +546,8 @@ export default function BmgPage() {
       </section>
 
       {/* Section 8 — Cross-Functional Coordination */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Cross-Functional Leadership</SectionLabel>
           <SectionHeading>Nine Teams, One Unified Strategy</SectionHeading>
           <Prose>
@@ -623,8 +623,8 @@ export default function BmgPage() {
       </section>
 
       {/* Section 9 — Projected Impact */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Projected Impact</SectionLabel>
           <SectionHeading>
             What This Initiative Was Designed to Deliver
@@ -643,8 +643,8 @@ export default function BmgPage() {
       </section>
 
       {/* Section 10 — AI Lens */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>AI Lens</SectionLabel>
           <SectionHeading>
             How AI Changes Regulated Product Development and Compliance Design
@@ -696,8 +696,8 @@ export default function BmgPage() {
       </section>
 
       {/* Section 11 — Cross-Fintech Application */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Beyond This Context</SectionLabel>
           <SectionHeading>
             Where Regulatory Product Thinking Transfers Across Fintech
@@ -744,7 +744,7 @@ export default function BmgPage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="flex gap-4 rounded-2xl border-[0.5px] border-border bg-background p-5"
+                className="flex gap-4 rounded-lg border border-border bg-background p-5"
               >
                 <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                 <div>
@@ -768,8 +768,8 @@ export default function BmgPage() {
       </section>
 
       {/* Bottom navigation */}
-      <div className="border-t border-border bg-background px-6 py-12">
-        <div className="mx-auto flex max-w-[900px] flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+      <div className="border-t border-border bg-background px-6 py-12 sm:px-10">
+        <div className="mx-auto flex max-w-[760px] flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <p className="text-xs uppercase tracking-widest text-text-tertiary">
               Previous Case Study
@@ -791,7 +791,7 @@ export default function BmgPage() {
             >
               AI Systems →
             </Link>
-            <p className="mt-0.5 text-xs text-text-tertiary">
+            <p className="mt-1 text-xs uppercase tracking-wide text-text-tertiary">
               AI Job Search OS and AI-Assisted Financial Decisioning System
             </p>
           </div>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-4 text-xs uppercase tracking-widest text-text-tertiary">
+    <p className="mb-2 text-xs uppercase tracking-widest text-text-tertiary">
       {children}
     </p>
   );
@@ -90,8 +90,8 @@ export default function AboutPage() {
   return (
     <main>
       {/* Header */}
-      <section className="bg-background px-6 pt-24 pb-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 pt-24 pb-16 sm:px-10">
+        <div className="mx-auto max-w-5xl">
           <p className="text-xs uppercase tracking-widest text-text-tertiary">
             Senior Product Manager · Los Angeles, CA
           </p>
@@ -99,7 +99,7 @@ export default function AboutPage() {
             Estefania Tortoledo
           </h1>
           {/* Pull quote */}
-          <p className="mt-8 max-w-[640px] text-[22px] font-medium leading-[1.3] tracking-tight text-text-primary sm:text-[28px]">
+          <p className="mt-8 max-w-2xl text-4xl font-medium tracking-tightest text-text-primary">
             I build financial products that work the way people actually need
             them to.
           </p>
@@ -110,9 +110,9 @@ export default function AboutPage() {
       <div className="border-t border-border" />
 
       {/* Section 1 — Essay */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
-          <div className="max-w-[680px] space-y-5 text-base leading-relaxed text-text-secondary">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-5xl">
+          <div className="max-w-2xl space-y-6 text-base leading-relaxed text-text-secondary">
             <p>
               Money touches every significant decision a person makes — where
               they live, whether they can start a business, how they weather a
@@ -198,37 +198,32 @@ export default function AboutPage() {
       </section>
 
       {/* Section 2 — Experience Timeline */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-5xl">
           <SectionLabel>Experience</SectionLabel>
           <div className="flex flex-col gap-0">
             {experience.map((role, i) => (
-              <div key={i} className="flex gap-6">
-                {/* Spine */}
-                <div className="flex flex-col items-center">
-                  <div className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent" />
-                  {i < experience.length - 1 && (
-                    <div className="mt-1 w-px flex-1 bg-border" />
-                  )}
-                </div>
-                {/* Content */}
-                <div className={`pb-10 ${i === experience.length - 1 ? "pb-0" : ""}`}>
-                  <p className="text-base font-medium text-text-primary">
-                    {role.title}
-                  </p>
-                  <p className="mt-0.5 text-xs uppercase tracking-widest text-text-tertiary">
-                    {role.company} · {role.domain}
-                  </p>
-                  <p className="mt-3 max-w-[620px] text-sm leading-relaxed text-text-secondary">
-                    {role.body}
-                  </p>
-                  <Link
-                    href={role.href}
-                    className="mt-3 inline-block text-sm font-medium text-text-primary transition-colors hover:text-text-secondary"
-                  >
-                    View Case Study →
-                  </Link>
-                </div>
+              <div
+                key={i}
+                className={`border-l-2 border-accent pl-6 ${
+                  i < experience.length - 1 ? "pb-10" : ""
+                }`}
+              >
+                <p className="text-base font-medium text-text-primary">
+                  {role.title}
+                </p>
+                <p className="mt-0.5 text-xs uppercase tracking-widest text-text-tertiary">
+                  {role.company} · {role.domain}
+                </p>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-text-secondary">
+                  {role.body}
+                </p>
+                <Link
+                  href={role.href}
+                  className="mt-3 inline-block text-sm font-medium text-text-primary transition-colors hover:text-text-secondary"
+                >
+                  View Case Study →
+                </Link>
               </div>
             ))}
           </div>
@@ -236,19 +231,20 @@ export default function AboutPage() {
       </section>
 
       {/* Section 3 — How I Work */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-5xl">
           <SectionLabel>How I Work</SectionLabel>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {principles.map((p) => (
               <div
                 key={p.title}
-                className="rounded-2xl border-[0.5px] border-border bg-surface p-6"
+                className="rounded-lg border border-border bg-surface p-6"
               >
                 <p className="text-sm font-medium leading-snug text-text-primary">
                   {p.title}
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                <div className="my-3 border-t border-border" />
+                <p className="text-sm leading-relaxed text-text-secondary">
                   {p.body}
                 </p>
               </div>
@@ -258,10 +254,10 @@ export default function AboutPage() {
       </section>
 
       {/* Section 4 — Currently Interested In */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-5xl">
           <SectionLabel>Currently Interested In</SectionLabel>
-          <div className="max-w-[640px] space-y-4 text-base leading-relaxed text-text-secondary">
+          <div className="max-w-2xl space-y-4 text-base leading-relaxed text-text-secondary">
             <p>
               Senior and principal PM roles in fintech — lending, banking
               infrastructure, embedded finance, payments, risk systems, and
@@ -281,10 +277,10 @@ export default function AboutPage() {
       </section>
 
       {/* Section 5 — Outside of Work */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-5xl">
           <SectionLabel>Outside of Work</SectionLabel>
-          <div className="max-w-[640px] space-y-4 text-base leading-relaxed text-text-secondary">
+          <div className="max-w-2xl space-y-4 text-base leading-relaxed text-text-secondary">
             <p>
               I am consistently drawn to understanding how systems work —
               financial markets, consumer behavior, emerging technology, the way
@@ -303,20 +299,20 @@ export default function AboutPage() {
       </section>
 
       {/* Section 6 — Contact */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-5xl">
           <SectionLabel>Get in Touch</SectionLabel>
           <h2 className="text-3xl font-medium text-text-primary">
             Let&apos;s talk.
           </h2>
-          <p className="mt-4 max-w-[480px] text-base leading-relaxed text-text-secondary">
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-text-secondary">
             I am open to conversations about senior PM roles, fintech product
             challenges, and AI-enabled financial product development.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="mailto:tortoledoestefan@gmail.com"
-              className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-medium text-text-primary transition-colors hover:bg-accent-dark"
+              className="inline-flex items-center justify-center rounded bg-text-primary px-6 py-3 text-sm font-medium text-background transition-colors hover:opacity-90"
             >
               Email Me
             </a>
@@ -324,7 +320,7 @@ export default function AboutPage() {
               href="https://www.linkedin.com/in/estefania-tortoledo"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-border px-6 py-3 text-sm text-text-secondary transition-colors hover:border-text-tertiary hover:text-text-primary"
+              className="inline-flex items-center justify-center rounded border border-border px-6 py-3 text-sm text-text-secondary transition-colors hover:border-text-secondary"
             >
               LinkedIn
             </a>
@@ -333,39 +329,29 @@ export default function AboutPage() {
       </section>
 
       {/* Section 7 — Skills and Tools */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-5xl">
           <SectionLabel>Tools and Domain Knowledge</SectionLabel>
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
-            {/* Domain */}
             <div>
-              <p className="mb-4 text-xs font-medium uppercase tracking-widest text-text-tertiary">
+              <p className="mb-3 text-xs uppercase tracking-widest text-text-tertiary">
                 Domain
               </p>
               <ul className="flex flex-col gap-2">
                 {domainTags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="flex items-center gap-2 text-sm text-text-secondary"
-                  >
-                    <span className="h-1 w-1 shrink-0 rounded-full bg-accent" />
+                  <li key={tag} className="text-sm leading-relaxed text-text-secondary">
                     {tag}
                   </li>
                 ))}
               </ul>
             </div>
-            {/* Tools */}
             <div>
-              <p className="mb-4 text-xs font-medium uppercase tracking-widest text-text-tertiary">
+              <p className="mb-3 text-xs uppercase tracking-widest text-text-tertiary">
                 Tools and Methods
               </p>
               <ul className="flex flex-col gap-2">
                 {toolTags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="flex items-center gap-2 text-sm text-text-secondary"
-                  >
-                    <span className="h-1 w-1 shrink-0 rounded-full bg-accent" />
+                  <li key={tag} className="text-sm leading-relaxed text-text-secondary">
                     {tag}
                   </li>
                 ))}
@@ -376,8 +362,8 @@ export default function AboutPage() {
       </section>
 
       {/* Footer note */}
-      <div className="border-t border-border bg-background px-6 py-10">
-        <div className="mx-auto max-w-[900px] text-center">
+      <div className="border-t border-border bg-background px-6 py-10 sm:px-10">
+        <div className="mx-auto max-w-5xl text-center">
           <p className="text-xs text-text-tertiary">
             This portfolio was built with Next.js, Tailwind CSS, Cursor, and
             Claude. The case study content reflects real product work. Metrics

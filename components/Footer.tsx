@@ -1,22 +1,20 @@
 import Link from "next/link";
 
-const socialLinks = [
-  { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "GitHub", href: "https://github.com" },
-];
-
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-background py-8">
-      <div className="mx-auto flex max-w-[900px] flex-col items-center gap-6 px-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
-        <p className="text-sm text-text-tertiary md:order-1">
+    <footer className="border-t border-border bg-background py-6">
+      <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 text-center sm:flex-row sm:justify-between sm:px-10 sm:text-left">
+        <p className="text-xs text-text-tertiary">
           Estefania Tortoledo · Senior Product Manager
         </p>
-        <p className="text-xs text-text-tertiary md:order-2">
+        <p className="text-xs text-text-tertiary">
           Built with Next.js and Cursor
         </p>
-        <ul className="flex items-center justify-center gap-6 md:order-3">
-          {socialLinks.map((link) => (
+        <ul className="flex items-center gap-6">
+          {[
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/estefania-tortoledo" },
+            { label: "GitHub", href: "https://github.com" },
+          ].map((link) => (
             <li key={link.label}>
               <Link
                 href={link.href}

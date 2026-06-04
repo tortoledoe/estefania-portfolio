@@ -14,7 +14,7 @@ const metricsDisclaimer =
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-3 text-xs uppercase tracking-widest text-text-tertiary">
+    <p className="mb-2 text-xs uppercase tracking-widest text-text-tertiary">
       {children}
     </p>
   );
@@ -22,7 +22,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-2xl font-medium text-text-primary sm:text-3xl">
+    <h2 className="text-2xl font-medium text-text-primary">
       {children}
     </h2>
   );
@@ -30,7 +30,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 function Prose({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-6 max-w-[720px] space-y-4 text-base leading-relaxed text-text-secondary">
+    <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-text-secondary">
       {children}
     </div>
   );
@@ -196,7 +196,7 @@ function TradeoffGrid({
       {cards.map((c) => (
         <div
           key={c.title}
-          className="rounded-2xl border-[0.5px] border-border bg-surface p-6"
+          className="rounded-lg border border-border bg-surface p-6"
         >
           <p className="text-xs font-medium uppercase tracking-widest text-text-tertiary">
             {c.title}
@@ -317,8 +317,8 @@ export default function CaminoPage() {
   return (
     <main>
       {/* Back link */}
-      <div className="bg-background px-6 pt-28 pb-0">
-        <div className="mx-auto max-w-[900px]">
+      <div className="bg-background px-6 pt-24 pb-0 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <Link
             href="/#selected-work"
             className="text-sm text-text-secondary transition-colors hover:text-text-primary"
@@ -329,16 +329,16 @@ export default function CaminoPage() {
       </div>
 
       {/* Header */}
-      <section className="bg-background px-6 pt-10 pb-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 pt-10 pb-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <p className="text-xs uppercase tracking-widest text-text-tertiary">
             Camino Financial · SMB Lending
           </p>
-          <h1 className="mt-4 max-w-[720px] text-[32px] font-medium leading-[1.15] tracking-tight text-text-primary sm:text-[44px]">
+          <h1 className="mt-4 max-w-[720px] text-4xl font-medium tracking-tightest text-text-primary">
             Redesigning a High-Friction Financial Onboarding System to Drive
             End-to-End Conversion
           </h1>
-          <p className="mt-5 max-w-[600px] text-base leading-relaxed text-text-secondary sm:text-lg">
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-text-secondary">
             How I connected UX, data quality, and underwriting decisioning to
             improve funded loan conversion across a complete SMB financial
             onboarding funnel.
@@ -352,10 +352,10 @@ export default function CaminoPage() {
               { value: "4 Phases", label: "Delivered" },
             ].map((stat) => (
               <div key={stat.label} className="sm:px-8 first:sm:pl-0">
-                <p className="text-xl font-medium text-text-primary">
+                <p className="text-2xl font-medium text-text-primary">
                   {stat.value}
                 </p>
-                <p className="mt-0.5 text-xs text-text-tertiary">{stat.label}</p>
+                <p className="mt-1 text-xs uppercase tracking-wide text-text-tertiary">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -385,8 +385,8 @@ export default function CaminoPage() {
       <div className="border-t border-border" />
 
       {/* Section 1 — Context */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Context</SectionLabel>
           <SectionHeading>
             Scaling SMB Lending With an Underperforming Funnel
@@ -416,8 +416,8 @@ export default function CaminoPage() {
       </section>
 
       {/* Section 2 — Problem */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Problem</SectionLabel>
           <SectionHeading>
             The Breakdown Was Happening on Both Sides of the Funnel
@@ -458,8 +458,8 @@ export default function CaminoPage() {
       </section>
 
       {/* Section 3 — Key Insight */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Key Insight</SectionLabel>
           <SectionHeading>
             Conversion Issues Were Tightly Linked to Underwriting Delays and
@@ -494,8 +494,8 @@ export default function CaminoPage() {
       </section>
 
       {/* Section 4 — North Star */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>North Star</SectionLabel>
           <SectionHeading>One Metric to Rule the Entire Funnel</SectionHeading>
           <Prose>
@@ -523,8 +523,8 @@ export default function CaminoPage() {
       </section>
 
       {/* Section 5 — Strategy */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Strategy</SectionLabel>
           <SectionHeading>
             Optimize Across Three Layers Simultaneously
@@ -564,8 +564,8 @@ export default function CaminoPage() {
       </section>
 
       {/* Section 6 — Roadmap */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Roadmap</SectionLabel>
           <SectionHeading>
             Four Phases, Sequenced by Revenue Impact
@@ -582,8 +582,8 @@ export default function CaminoPage() {
       </section>
 
       {/* Section 7 — Key Tradeoffs */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Key Decisions</SectionLabel>
           <SectionHeading>
             The Tradeoffs That Defined the Product
@@ -600,8 +600,8 @@ export default function CaminoPage() {
       </section>
 
       {/* Section 8 — Experimentation */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Experimentation</SectionLabel>
           <SectionHeading>Full-Stack Funnel Optimization</SectionHeading>
           <Prose>
@@ -637,8 +637,8 @@ export default function CaminoPage() {
       </section>
 
       {/* Section 9 — Outcome */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Outcome</SectionLabel>
           <SectionHeading>
             Improved Conversion Across Every Stage of the Funnel
@@ -661,8 +661,8 @@ export default function CaminoPage() {
       </section>
 
       {/* Section 10 — AI Lens */}
-      <section className="bg-surface px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-surface px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>AI Lens</SectionLabel>
           <SectionHeading>
             How I Would Redesign This With AI Today
@@ -708,8 +708,8 @@ export default function CaminoPage() {
       </section>
 
       {/* Section 11 — Cross-Fintech Application */}
-      <section className="bg-background px-6 py-16">
-        <div className="mx-auto max-w-[900px]">
+      <section className="bg-background px-6 py-16 sm:px-10">
+        <div className="mx-auto max-w-[760px]">
           <SectionLabel>Beyond This Context</SectionLabel>
           <SectionHeading>
             Where This Thinking Applies Across Fintech
@@ -750,8 +750,8 @@ export default function CaminoPage() {
       </section>
 
       {/* Bottom navigation */}
-      <div className="border-t border-border bg-background px-6 py-12">
-        <div className="mx-auto flex max-w-[900px] flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+      <div className="border-t border-border bg-background px-6 py-12 sm:px-10">
+        <div className="mx-auto flex max-w-[760px] flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <Link
             href="/#selected-work"
             className="text-sm text-text-secondary transition-colors hover:text-text-primary"
@@ -768,7 +768,7 @@ export default function CaminoPage() {
             >
               Quantum Lending Solutions →
             </Link>
-            <p className="mt-0.5 text-xs text-text-tertiary">
+            <p className="mt-1 text-xs uppercase tracking-wide text-text-tertiary">
               Building an End-to-End SMB Lending Platform from Zero
             </p>
           </div>
