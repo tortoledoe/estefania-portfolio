@@ -3,7 +3,7 @@ import type { NavItem } from "@/lib/types";
 
 const navItems: NavItem[] = [
   { label: "Work", href: "/#selected-work" },
-  { label: "AI Systems", href: "/#ai-systems" },
+  { label: "AI Systems", href: "/#selected-work" },
   { label: "About", href: "/about" },
 ];
 
